@@ -60,15 +60,20 @@ There isn't a good way to resize images with markdown, so if you need to resize 
 
 Here are some things to keep in mind if your blog appearance isn't going as you planned:
 
-Problem:  The blog post that you created isn't appearing\\
+**Problem:  The blog post that you created isn't appearing**
+
 Possible Solutions: 
   - Check your date. GitHub pages won't display blog posts with future dates
   - Check the header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description
+---
 
-Problem:  I know that I made changes to a blog post but the changes aren't appearing\\
+**Problem:  I know that I made changes to a blog post but the changes aren't appearing**
+
 Possible Solution:
   - Check the header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description.
 
-Problem:  My entire blog has wierd formatting
+---
+
+**Problem:  My entire blog has wierd formatting**
 Possible Solution:
-  - Using this is an address problem.  Double check your url and baseurl in the _config file
+  - Usually this is an address problem.  Double check your url and baseurl in the _config file
