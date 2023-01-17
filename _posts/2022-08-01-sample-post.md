@@ -2,7 +2,7 @@
 layout: post
 title:  "How to create a blog post"
 author: Shannon Tass
-description: A sample post to show with instructions on how to create a new blog post
+description: A sample post instructions on how to create a new blog post
 image: 
 ---
 
@@ -44,13 +44,13 @@ OR
 
 There isn't a good way to resize images with markdown, so if you need to resize an image, use the html code to insert your figure (instead of the markdown code):
 
-`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="", style=width:400px;"/>`
+`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>`
 
 (Width is 400 pixels)
 <img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>
 
 
-`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style=width:100px;"/>`
+`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:100px;"/>`
 
 (Width is 100 pixels)
 <img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:100px;"/>
