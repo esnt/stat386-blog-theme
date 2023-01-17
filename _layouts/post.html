@@ -7,7 +7,7 @@ layout: default
     {%- if page.image -%}
       <img src="{{- page.image | relative_url -}}", alt="", class="featured-image-post">
     {%- else -%} 
-      {%- assign defaultImage = "/assets/images/front.jpg" -%}
+      {%- assign defaultImage = "/assets/images/default.jpg" -%}
       <img src="{{- defaultImage | relative_url -}}", alt="", class="featured-image-post">
     {%- endif -%} 
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -21,12 +21,14 @@ layout: default
       {%- endif -%}
       {% assign words = content | number_of_words %}
       {%- unless content.size == 0 -%}
-        <br> <span class="post-meta">  {{ words | divided_by:180 }} min read</span>
+         <span class="post-meta"> • {{ words | divided_by:180 }} min read</span>
       {%- endunless -%}
       {%- if page.description -%} 
        <p><em> <font size="-1">{{page.description}} </font></em></p>
       {%- endif -%}
-      <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+    </p>
+    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+    
   </header>
   
  

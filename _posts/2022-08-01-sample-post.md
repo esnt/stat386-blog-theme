@@ -1,68 +1,74 @@
 ---
 layout: post
-title:  "Sample Post"
-date:   2022-08-01 11:24:47 -0700
+title:  "How to create a blog post"
 author: Shannon Tass
-description: A sample post to show how the content will look and how different
-  headlines, quotes and codes will be represented.
-image: /assets/images/image5.jpg
+description: A sample post to show with instructions on how to create a new blog post
+image: 
 ---
 
+## Steps for creating a new post.  
 
+1. Create a new file in the "_posts" folder called 'YYYY-MM-DD-post-name.md', where YYYY is the year (2023), MM numeric month (01-12), and DD is the numeric day of the month (01-31).  The "post-name" is a short name for the new post with - between words.  **You must use this name convention for all new posts.**  
 
-This post will show you how the content will look in the post pages and how the headlines, quotes, lists, code block, and other items will be represented. Jekyll is mainly used to write simple markdown and after that it renders out a static pages, so you need to know the basics of writing markdown for that.
-For more information about writing markdown you can checkout the following markdown cheatsheets:
+2.  Make the YML heading.  All pages in the site need to start with a YML heading.  For posts you should use
+```
+---
+layout: post
+title:  "Post Name"
+author: Your name
+description: Short yet informative description
+image: /assets/images/blog-image.jpg
+---
+```
+Note that the layout should stay as "post", but all the other fields you need to update with the information for your particular blog post.  The blog image should be a .jpg or .png file that you should add to the folder "assets/images".  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  The file path should be okay to leave as "/assets/images/" in the header area.  
+
+3.  Write the body of the blog using markdown.  For more information about writing with markdown, see the following 
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 * [Markdown Guide](https://www.markdownguide.org/cheat-sheet/)
 * [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 
+## Adding Images
+Images for the blog will generally but put into the 'assets/images' folder.  You can aslo create a subfolder for each blog post if you'd like to keep your figures organized.  **I've found that in the body of the post, it works better to use a url pointing to the figure's location.**  In order to find the appropriate url, navigate to the figure in the repository and find the "download" url.  The correct url will typically have the work "raw" either at the beginning or as `/raw/` in the middle somewhere. For example:
+
+```
+![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg)
+
+OR
+
+![Figure](https://github.com/esnt/my386blog/raw/main/assets/images/default.jpg)
+```
+
+![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg)
+
+### Resizing images
+
+There isn't a good way to resize images with markdown, so if you need to resize an image, use the html code to insert your figure (instead of the markdown code):
+
+`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="", style=width:400px;"/>`
+
+(Width is 400 pixels)
+<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>
 
 
-# This is the h1 text
-## This is the h2 text
-### This is the h3 text
-#### This is the h4 text
-##### This is the h5 text
-###### This is the h6 text
+`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style=width:100px;"/>`
 
-**Bold Text in the post will look like:**<br>
-**This text is Bold**
+(Width is 100 pixels)
+<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:100px;"/>
 
-**Italic Text in the post will look like:**<br>
-*This text is Italic*
 
-> Quotes on your post will look like this
+## Troubleshooting
 
-`Codes on your post will look like this`
+Here are some things to keep in mind if your blog appearance isn't going as you planned:
 
-**Link in the post will look like:**<br>
-[This is a link](#)
+Problem:  The blog post that you created isn't appearing\\
+Possible Solutions: 
+  - Check your date. GitHub pages won't display blog posts with future dates
+  - Check the header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description
 
-**Bullet list in the post will look like:**
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-* Item 5
+Problem:  I know that I made changes to a blog post but the changes aren't appearing\\
+Possible Solution:
+  - Check the header.  If there are any special characters in any of the fields, you need to use quotes around the entire field entry.  The most common culprit is the description.  If you're having trouble, try putting quotes around the entire description.
 
-**Number list in the post will look like:**
-1. Item 1
-2. Item 2
-3. Item 3
-4. Item 4
-5. Item 5
-
-**Images in the post will look like:**<br>
-![Test Image](https://raw.githubusercontent.com/esnt/stat386-projects/main/assets/images/image5.jpg)
-
-**Normal text in the post will look like**<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id finibus nisl. Etiam in hendrerit est. Nulla non erat ac lectus interdum lobortis. Vestibulum at mi ex. Mauris nisl mi, venenatis et feugiat nec, finibus porttitor velit. Suspendisse tincidunt lobortis leo, quis tristique tellus iaculis quis. Donec eleifend pulvinar gravida. Proin non lorem eros. Donec sit amet finibus ex, eget vestibulum nunc. Ut ut enim id purus porttitor tristique. Vivamus tincidunt eleifend hendrerit. Proin metus felis, ultrices vel dui in, porta dapibus dui. Sed sagittis ex vitae dui tristique dignissim. Cras vel leo ipsum.
-
-Aenean ac neque et risus mattis accumsan. Sed ac tellus molestie, lacinia ante sit amet, convallis felis. Maecenas aliquet lectus nec euismod auctor. Donec finibus pellentesque tortor, ac efficitur metus suscipit non. Proin diam orci, blandit quis malesuada ac, efficitur a nisl. Mauris eleifend consequat blandit. Sed egestas quam et orci gravida, non euismod metus scelerisque. Curabitur venenatis pellentesque erat commodo pharetra. Fusce id ante nec ipsum fringilla auctor. In justo quam, feugiat placerat eleifend dapibus, luctus et quam. Fusce facilisis erat ut odio convallis viverra et id mauris. Sed vehicula tempus consectetur. Aliquam pharetra, purus non egestas tristique, tellus massa fringilla est, id sagittis tellus urna non mauris. Suspendisse fringilla, velit nec blandit facilisis, ligula ante imperdiet est, et placerat magna sem quis tortor.
-
-Vestibulum vitae fermentum velit, rhoncus egestas orci. Nulla at purus ut orci posuere vulputate. In eget leo diam. In congue in diam nec elementum. Suspendisse fringilla ante nulla, eu tristique orci ultrices eget. Aenean non lorem tellus. Vestibulum tempor metus sit amet tellus feugiat, sit amet consequat lacus ultricies.
-
-Donec imperdiet, lectus eget congue cursus, dolor enim finibus risus, ut molestie lorem tellus non tortor. Donec quam nibh, molestie in dapibus et, efficitur non tortor. Morbi orci tellus, mollis vel mi vitae, auctor lobortis erat. Ut gravida velit eget ligula lacinia, id rhoncus tellus gravida. Maecenas laoreet rutrum consequat. Suspendisse sed nibh dui. Curabitur dictum euismod mollis. Sed egestas libero libero, eu accumsan augue placerat non. Nunc id condimentum orci. Mauris vitae sollicitudin quam.
-
-**Giphy Gifs will look like:**<br>
-<iframe src="https://giphy.com/embed/ZqlvCTNHpqrio" width="480" height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/laughing-despicable-me-minions-ZqlvCTNHpqrio">via GIPHY</a></p>
+Problem:  My entire blog has wierd formatting
+Possible Solution:
+  - Using this is an address problem.  Double check your url and baseurl in the _config file
