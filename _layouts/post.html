@@ -7,8 +7,8 @@ layout: default
     {%- if page.image -%}
       <img src="{{- page.image | relative_url -}}", alt="", class="featured-image-post">
     {%- else -%} 
-      {%- assign defaultImage = "/assets/images/default.jpg" -%}
-      <img src="{{- defaultImage | relative_url -}}", alt="", class="featured-image-post">
+      {%- assign defaultImage = "https://source.unsplash.com/random" -%}
+      <img src="{{- defaultImage -}}", alt="", class="featured-image-post">
     {%- endif -%} 
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
@@ -38,7 +38,7 @@ layout: default
   </div>
 
   <script src="https://utteranc.es/client.js"
-          repo="your-user-name/my386blog"
+          repo="your-user-name/stat386-blog-theme"
           issue-term="pathname"
           label="💬"
           theme="boxy-light"
