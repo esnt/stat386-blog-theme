@@ -22,42 +22,43 @@ image: /assets/images/blog-image.jpg
 ```
 For this theme, the layout should stay as "post".   All the other fields should be updated with the information for your particular blog post.  The blog image should be a .jpg or .png file that you should add to the folder "assets/images".  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  Leave the file path as "/assets/images/" in the header area.  
 
-3.  Write the body of the blog using markdown.  For more information about writing with markdown, see the following 
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-* [Markdown Guide](https://www.markdownguide.org/cheat-sheet/)
-* [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+3.  Write the body of the blog using markdown.  There are a lot of references for markdown available.  I like [Markdown Guide](https://www.markdownguide.org).  There are separate pages for [basic syntax](https://www.markdownguide.org/basic-syntax/), [extended syntax](https://www.markdownguide.org/extended-syntax/), and a [cheatsheet](https://www.markdownguide.org/cheat-sheet/).  
+
+
+## Internal Links and File
+If you want to have a link that points to another location on your site or if you want to include a file (such as an image or videa) you must use the `site.url` and `site.baseurl` variables when making the link reference.  For example, suppose you want a link to point to [about]({{site.url}}/{{site.baseurl}}/about) page.  The reference should be specified as
+```
+  {{site.url}}/{{site.baseurl}}/about
+```
+Paths to files should also be referenced with the `site.url` and `site.baseurl` variables.
 
 ## Adding Images
-Images for the blog will generally but put into the 'assets/images' folder.  You can aslo create a subfolder for each blog post if you'd like to keep your figures organized.  **I've found that in the body of the post, it works better to use a url pointing to the figure's location.**  In order to find the appropriate url, navigate to the figure in the repository and find the "download" url.  The correct url will typically have the work "raw" either at the beginning or as `/raw/` in the middle somewhere. For example:
+Images for the blog will generally but put into the 'assets/images' folder.  You can aslo create a subfolder for images, but you will need to include the subfolder name in the reference link. 
 
+Markdown syntax for including images is `![AltText](path/to/image)`.  For example:
+```
+![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
+```
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
 
-```
-![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/image5.jpg)
-
-OR
-
-![Figure](https://github.com/esnt/my386blog/raw/main/assets/images/default.jpg)
-```
-
-![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg)
 
 ### Resizing images
 
-There isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown using the following code:
+The image I added in the previous section seems a bit large for this post.  Unfortunately,
+there isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown:
 
 ```
-<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:400px;"/>
+<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:300px;"/>
 ```
 
-(Width is 400 pixels)
-<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>
+(Example with width set to 300 pixels)
+<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:300px;"/>
 
 
-`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:100px;"/>`
+(Example with width set to 100 pixels)
+<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:100;"/>
 
-(Width is 100 pixels)
-<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:100px;"/>
+
 
 ---
 
