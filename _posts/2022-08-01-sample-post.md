@@ -20,7 +20,7 @@ description: Short yet informative description
 image: /assets/images/blog-image.jpg
 ---
 ```
-Note that the layout should stay as "post", but all the other fields you need to update with the information for your particular blog post.  The blog image should be a .jpg or .png file that you should add to the folder "assets/images".  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  The file path should be okay to leave as "/assets/images/" in the header area.  
+For this theme, the layout should stay as "post".   All the other fields should be updated with the information for your particular blog post.  The blog image should be a .jpg or .png file that you should add to the folder "assets/images".  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  Leave the file path as "/assets/images/" in the header area.  
 
 3.  Write the body of the blog using markdown.  For more information about writing with markdown, see the following 
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
@@ -30,8 +30,10 @@ Note that the layout should stay as "post", but all the other fields you need to
 ## Adding Images
 Images for the blog will generally but put into the 'assets/images' folder.  You can aslo create a subfolder for each blog post if you'd like to keep your figures organized.  **I've found that in the body of the post, it works better to use a url pointing to the figure's location.**  In order to find the appropriate url, navigate to the figure in the repository and find the "download" url.  The correct url will typically have the work "raw" either at the beginning or as `/raw/` in the middle somewhere. For example:
 
+![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
+
 ```
-![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg)
+![Figure](https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/image5.jpg)
 
 OR
 
@@ -42,9 +44,11 @@ OR
 
 ### Resizing images
 
-There isn't a good way to resize images with markdown, so if you need to resize an image, use the html code to insert your figure (instead of the markdown code):
+There isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown using the following code:
 
-`<img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>`
+```
+<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:400px;"/>
+```
 
 (Width is 400 pixels)
 <img src="https://raw.githubusercontent.com/esnt/my386blog/main/assets/images/default.jpg" alt="" style="width:400px;"/>
