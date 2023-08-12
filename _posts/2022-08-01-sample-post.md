@@ -2,15 +2,15 @@
 layout: post
 title:  "How to create a blog post"
 author: Shannon Tass
-description: A sample post instructions on how to create a new blog post
-image: 
+description: A sample post instructions on how to create a new blog post.  There are some things that relate specifically to this theme, but most of the instructions will generalize to any Jekyll theme. 
+image: "https://source.unsplash.com/random"
 ---
 
 ## Steps for creating a new post.  
 
-1. Create a new file in the "_posts" folder called 'YYYY-MM-DD-post-name.md', where YYYY is the year (2023), MM numeric month (01-12), and DD is the numeric day of the month (01-31).  The "post-name" is a short name for the new post with - between words.  **You must use this name convention for all new posts.**  
+* Create a new file in the `_posts` folder called `YYYY-MM-DD-post-name.md`, where YYYY is the year (2023), MM numeric month (01-12), and DD is the numeric day of the month (01-31).  The `post-name` is a short name for the new post with `-` between words.  **You must use this name convention for all new posts.**  
 
-2.  Make the YML heading.  All pages in the site need to start with a YML heading.  For posts you should use
+*  Make the YML heading.  All pages in the site need to start with a YML heading.  For posts you should use the following header:
 ```
 ---
 layout: post
@@ -20,35 +20,70 @@ description: Short yet informative description
 image: /assets/images/blog-image.jpg
 ---
 ```
-For this theme, the layout should stay as "post".   All the other fields should be updated with the information for your particular blog post.  The blog image should be a .jpg or .png file that you should add to the folder "assets/images".  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  Leave the file path as "/assets/images/" in the header area.  
+* For this theme, the layout should stay as `post`.   All the other fields should be updated with the information for your particular blog post.  The blog image should be a `.jpg` or `.png` file that you should add to the folder `assets/images`.  Don't make it too large or the page will take longer to load (500-800 KB is a good size).  Leave the file path as `/assets/images/` in the header area. 
 
-3.  Write the body of the blog using markdown.  There are a lot of references for markdown available.  I like [Markdown Guide](https://www.markdownguide.org).  There are separate pages for [basic syntax](https://www.markdownguide.org/basic-syntax/), [extended syntax](https://www.markdownguide.org/extended-syntax/), and a [cheatsheet](https://www.markdownguide.org/cheat-sheet/).  
+* Write the body of the blog using markdown.  There are a lot of references for markdown available.  I like the [Markdown Guide](https://www.markdownguide.org) because many of the examples show both the markdown and the html code.  There are separate pages for [basic syntax](https://www.markdownguide.org/basic-syntax/), [extended syntax](https://www.markdownguide.org/extended-syntax/), and a [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for quick reference. 
 
+* You can also use html code snippets along with the markdown.  Often, using html will give you a little more control and flexibility as demonstrated below.
 
-## Internal Links and File
-If you want to have a link that points to another location on your site or if you want to include a file (such as an image or videa) you must use the `site.url` and `site.baseurl` variables when making the link reference.  For example, suppose you want a link to point to [about]({{site.url}}/{{site.baseurl}}/about) page.  The reference should be specified as
+---
+---
+
+### Links 
+
+To create a link (internal or external), enclose the link text in brackets (e.g., [Statistics Department]) and then follow it immediately with the URL in parentheses (e.g., (https://statistics.byu.edu)).
+
+For example:
 ```
-  \{{site.url\}}/\{{site.baseurl\}}/about
+{% raw %}My favorite department at BYU is the [Statistics Department](https://statistics.byu.edu).{% endraw %}
 ```
-Paths to files should also be referenced with the `site.url` and `site.baseurl` variables.
+My favorite department at BYU is the [Statistics Department](https://statistics.byu.edu)
+
+
+If you want external links to open in a separate window, you will need to use html code with `target="_blank"` inside the `a` tag. 
+
+For example:
+```
+My favorite department at BYU is the <a href="https:statistics.byu.edu" target="_blank">Statistics Department</a>
+```
+My favorite department at BYU is the <a href="https:statistics.byu.edu" target="_blank">Statistics Department</a>
+
+
+----
+----
+
+## Internal Links and Files
+
+If you want to have a link that points to another location on your site or if you want to include a file (such as an image or video) you must use the `site.url` and `site.baseurl` variables when making the link reference.  For example, this link to pointing to the [About]({{site.url}}/{{site.baseurl}}/about) page is coded as:
+```
+[About]({% raw %}{{site.url}}/{{site.baseurl}}/about){% endraw %}
+```
+Paths to files should also be referenced with the `site.url` and `site.baseurl` variables (see the section on **Adding Images**).
+
+---
+---
 
 ## Adding Images
-Images for the blog will generally but put into the 'assets/images' folder.  You can aslo create a subfolder for images, but you will need to include the subfolder name in the reference link. 
+*In the examples below, if your image ends with `.png` or `.JPEG`, use the appropriate extension instead of `.jpg`.*  
 
-Markdown syntax for including images is `![AltText](path/to/image)`.  For example:
+Images for the blog will generally but put into the `assets/images` folder.  (You can also create a subfolder for images, but you will need to include the subfolder name in the reference link.) 
+
+Markdown syntax for including images is `![Fig Name](path/to/image)`.  For example:
 ```
-![Figure](\{{site.url\}}/\{{site.baseurl\}}/assets/images/image_name.jpg)
+{% raw %}![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg){% endraw %}
 ```
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
 
+---
+---
 
 ### Resizing images
 
 The image I added in the previous section seems a bit large for this post.  Unfortunately,
-there isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown:
+there isn't a good way to resize images with markdown, so if you need to resize an image, use html instead of markdown and specify the width in the style parameter as follows:
 
 ```
-<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:300px;"/>
+{% raw %}<img src="{{site.url}}/{{site.baseurl}}/assets/images/image_name.jpg" alt="" style="width:300px;"/>{% endraw %}
 ```
 
 (Example with width set to 300 pixels)
@@ -56,10 +91,12 @@ there isn't a good way to resize images with markdown, so if you need to resize 
 
 
 (Example with width set to 100 pixels)
-<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:100;"/>
+<img src="{{site.url}}/{{site.baseurl}}/assets/images/image5.jpg" alt="" style="width:100px;"/>
 
 
 
+---
+---
 ---
 
 ## Troubleshooting
@@ -81,7 +118,7 @@ Possible Solution:
 
 ---
 
-**Problem:  My entire blog has wierd formatting**
+**Problem:  My entire blog has weird formatting**
 
 Possible Solution:
-  - Usually this is an address problem.  Double check your url and baseurl in the _config file
+  - Usually this is an address problem.  Double check your url and baseurl in the `_config` file
