@@ -37,7 +37,7 @@ Images for the blog will generally but put into the 'assets/images' folder.  You
 
 Markdown syntax for including images is `![AltText](path/to/image)`.  For example:
 ```
-![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
+![Figure](\{{site.url\}}/\{{site.baseurl\}}/assets/images/image5.jpg)
 ```
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
 
