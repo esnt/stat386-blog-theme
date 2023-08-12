@@ -28,7 +28,7 @@ For this theme, the layout should stay as "post".   All the other fields should 
 ## Internal Links and File
 If you want to have a link that points to another location on your site or if you want to include a file (such as an image or videa) you must use the `site.url` and `site.baseurl` variables when making the link reference.  For example, suppose you want a link to point to [about]({{site.url}}/{{site.baseurl}}/about) page.  The reference should be specified as
 ```
-  `{{site.url}}/{{site.baseurl}}/about
+  \{{site.url\}}/\{{site.baseurl\}}/about
 ```
 Paths to files should also be referenced with the `site.url` and `site.baseurl` variables.
 
@@ -37,7 +37,7 @@ Images for the blog will generally but put into the 'assets/images' folder.  You
 
 Markdown syntax for including images is `![AltText](path/to/image)`.  For example:
 ```
-![Figure](\{{site.url\}}/\{{site.baseurl\}}/assets/images/image5.jpg)
+![Figure](\{{site.url\}}/\{{site.baseurl\}}/assets/images/image_name.jpg)
 ```
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/images/image5.jpg)
 
