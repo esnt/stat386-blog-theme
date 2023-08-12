@@ -37,7 +37,7 @@ layout: default
           <img src="{{- post.image | relative_url -}}" alt="" class="blog-roll-image">
         {%- else -%}
           {%- assign postImage = "https://source.unsplash.com/random" -%}
-          <img src="{{- postImage | relative_url -}}" alt="" class="blog-roll-image">
+          <img src="{{- postImage -}}" alt="" class="blog-roll-image">
         {%- endif -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

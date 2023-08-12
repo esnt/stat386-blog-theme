@@ -2,8 +2,8 @@
 layout: post
 title:  "How to create a blog post"
 author: Shannon Tass
-description: A sample post instructions on how to create a new blog post.  There are some things that relate specifically to this theme, but most of the instructions will generalize to any Jekyll theme. 
-image: "https://source.unsplash.com/random"
+description: A sample post with instructions and tips on how to create a new blog post.   
+image: "/assets/images/image5.jpg"
 ---
 
 ## Steps for creating a new post.  
