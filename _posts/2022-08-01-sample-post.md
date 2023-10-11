@@ -26,6 +26,7 @@ image: /assets/images/blog-image.jpg
 
 * You can also use html code snippets along with the markdown.  Often, using html will give you a little more control and flexibility as demonstrated below.
 
+This is a change
 ---
 ---
 
