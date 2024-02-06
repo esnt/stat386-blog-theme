@@ -23,15 +23,10 @@ email: author_email@email.com
 description: "Change the description so that it describes your blog" 
 baseurl: "/stat386-blog-theme" # the name of the repository 
 url: "https://esnt.github.io" #  change this to "https://<your-github-username>.github.io"
-image: https://source.unsplash.com/random
+image: /assets/images/headerimg.jpg
 author: Your name
-copyright: ABCD # Your initials or what you want the copyright to be.  Leave empty for no copyright
-footer_description: 'The default image for the site header is a random image from 
-        <a href="https://source.unsplash.com/random" target="_blank"> Unsplash</a>. 
-        The default image for the blog post is from
-        <a href="https://unsplash.com/photos/DWpR-BpKlw0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" target="_blank"
-        >Unsplash by Mohamed Elsayed</a>. Students in Stat 386 using this theme should replace both images 
-        with their own.'
+copyright: ABCD # Your initials or name or what you want the copyright to be.  Leave empty for no copyright
+footer_description: 
 
 
 # Social media users names.  Leave fields blank that you don't want displayed
